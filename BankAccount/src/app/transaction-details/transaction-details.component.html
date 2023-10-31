@@ -1,0 +1,42 @@
+<div id="transaction" dir="rtl">
+    <h1>
+        הצג את פרטי התנועה
+    </h1>
+    <br />
+    <label for=amount>סכום:</label>
+        <div>{{transaction.amount | currency : 'ILS'}}</div>  
+
+        <br />
+        <br />
+        <label for=asmachta>אסמכתא:</label>
+        <div>{{transaction.asmachta| lowercase}}</div>
+
+        <br />
+        <br />
+        <label required for=taarich>תאריך:</label>
+        <div>{{transaction.trnDate | date : 'dd/MM/yyyy'}}</div>
+
+        <br />
+        <br />
+    
+        <label for=trnType>סוג פעולה:</label>
+        <div>{{TransactionType[transaction.trnTyp] | uppercase}}</div> 
+        <br />
+        <br />
+
+        <label for=note>הערה:</label>
+        <div>{{transaction.note | lowercase}}</div> 
+
+        <br />
+        <br />
+        <button (click)="deleteTransaction()">
+            מחק
+        </button>
+        <br />
+        <br />
+        <button (click)="returnTransactionDetials()">
+            חזור לרשימת התנועות
+        </button>
+        <br />
+        <br />
+</div>

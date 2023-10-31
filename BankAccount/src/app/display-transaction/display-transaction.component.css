@@ -1,0 +1,44 @@
+.minus {color:red}
+table {
+    width: 100%;
+    max-width: 100px; 
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .welcome-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-header h1 {
+    font-size: 24px;
+    color: #333;
+  }

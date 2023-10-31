@@ -1,0 +1,24 @@
+<div id="owner" class="welcome-header">
+  <h1>
+    טבלת התנועות בחשבון
+  </h1>
+</div>
+<div dir="rtl" id="table">
+    <table class="lineBorder">
+        <tr>
+            <th>מספר שורה</th>
+            <th>תאריך</th>
+            <th>סכום</th>
+            <th>סוג פעולה</th>
+            <th>יתרה</th>
+          </tr>
+          <tr *ngFor="let record of transactions; let i=index">
+            <td><a [routerLink]="['/TransactionDetails/'+record.numerator]">{{i+1}}</a></td>
+            <td>{{record.trnDate| date:'dd/MM/yyyy'}}</td>
+            <td>{{record.amount | currency:'ILS':'symbol'}}</td>
+            <td>{{record.trnTyp}}</td>
+            <td [class.minus]="record.currentBalance<0">{{record.currentBalance | currency:'ILS':'symbol'}}</td>
+          </tr>
+    </table>
+</div>
+

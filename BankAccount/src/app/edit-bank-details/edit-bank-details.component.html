@@ -1,0 +1,21 @@
+<div id="owner" class="welcome-header">
+        <h1>
+            Welcome to the {{toString()}}
+        </h1>
+</div>
+<div class="form-container">
+        <div class="form-group">
+            <label for="bankName">הכנס את שם הבנק החדש</label>
+            <input required id="bankName" min="0" [(ngModel)]="newBankName">
+        </div>
+        <div class="form-group">
+            <label for="bankNum">הכנס את מספר הסניף החדש</label>
+            <input required type="number" id="bankNum" min="0" [(ngModel)]="newBranchNumber">
+        </div>
+        <div class="form-group">
+            <label for="bankAccountNum">הכנס מספר חשבון חדש</label>
+            <input required type="number" id="bankAccountNum" min="0" [(ngModel)]="newAccountNumber">
+        </div>
+        <button class="submit-btn" (click)="updateBankDetails()">שנה פרטי בנק</button>
+</div>
+    

@@ -1,0 +1,25 @@
+<div id="owner" class="welcome-header">
+    <h1>
+        שינוי פרטי בעל החשבון
+    </h1>
+</div>
+<div class="container">
+    <img class="centered-img" [src]="(owner.hasPicture)?'assets/images/'+owner.tz+'.png':'assets/images/noImage.png'" height="80" >
+    <div dir=rtl class="form">
+        <label for=shem>שם:</label>
+        <input required type=text id=shem [(ngModel)]="name">
+        <br>
+        <label for=adrs>כתובת:</label>
+        <input required type=text id=adrs [(ngModel)]="address">
+        <br>
+        <label for=tzNum>תז:</label>
+        <input required type=number id=tzNum value={{owner.tz}} disabled>
+        <br>
+        <label for=pic>יש תמונה:</label>
+        <input required type=checkbox id=pic [(ngModel)]="owner.hasPicture">
+        <br>
+        <button class="btn" (click)="saveDetailsOwner()">
+            סיים עריכת פרטי בעל החשבון
+        </button>
+    </div>
+</div>
