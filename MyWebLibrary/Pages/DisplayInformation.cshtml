@@ -1,0 +1,40 @@
+@page
+@model MyWebLibrary.Pages.DisplayInformationModel
+@{
+}
+<h2>Display Information</h2>
+
+<form method="get">
+    <label for="searchQuery">Search for a book by name or author or subscriber by id:</label>
+    <input type="text" id="searchQuery" name="searchQuery" value="@Model.SearchQuery" />
+    <input type="submit" value="Search" />
+</form>
+
+<h3>Books</h3>
+@if (Model.Books != null && Model.Books.Any())
+{
+    <ul>
+        @foreach (var book in Model.Books)
+        {
+            <div class="card"><li>ID: @book.Id Title: @book.Title, Author: @book.Author, Genre: @book.Genre</li></div>
+        }
+    </ul>
+}
+else
+{
+    <p>No books found.</p>
+}
+<h3>Subscribers</h3>
+@if (Model.Subscribers != null && Model.Subscribers.Any())
+{
+    <ul>
+        @foreach (var subscriber in Model.Subscribers)
+        {
+            <div class="card"><li>@subscriber.Id @subscriber.FirstName @subscriber.LastName (Borrowed books: @string.Join(", ", subscriber.BorrowedBookIds))</li></div>
+        }
+    </ul>
+}
+else
+{
+    <p>No Subscribers found.</p>
+}

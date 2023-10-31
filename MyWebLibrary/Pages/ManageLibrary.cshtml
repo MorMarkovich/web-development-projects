@@ -1,0 +1,97 @@
+@page
+@model MyWebLibrary.Pages.ManageLibraryModel
+@{
+}
+<h2>Manage Library</h2>
+
+<h3>Add Subscriber</h3>
+@if (TempData["ErrorMessageSub"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageSub"]
+    </div>
+}
+@if (TempData["MessageSubAdd"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MessageSubAdd"]
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label>Id Subscriber:</label>
+        <input asp-for="Subscriber.Id" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input asp-for="Subscriber.FirstName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input asp-for="Subscriber.LastName" class="form-control">
+    </div>
+    <button asp-page-handler="AddSubscriber" class="btn btn-primary">Add Subscriber</button>
+</form>
+
+<h3>Delete Subscriber</h3>
+@if (TempData["MessageSubDel"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MessageSubDel"]
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label>Id Subscriber:</label>
+        <input asp-for="Subscriber.Id" class="form-control">
+    </div>
+    <button asp-page-handler="DeleteSubscriber" class="btn btn-primary">Delete Subscriber</button>
+</form>
+
+<h3>Add Book</h3>
+@if (TempData["ErrorMessageBook"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageBook"]
+    </div>
+}
+@if (TempData["MessageBAdd"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MessageBAdd"]
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label>Id Book:</label>
+        <input asp-for="Book.Id" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Title:</label>
+        <input asp-for="Book.Title" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Author:</label>
+        <input asp-for="Book.Author" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Genre:</label>
+        <input asp-for="Book.Genre" class="form-control">
+    </div>
+    <button asp-page-handler="AddBook" class="btn btn-primary">Add Book</button>
+</form>
+
+<h3>Delete Book</h3>
+@if (TempData["MessageBDel"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MessageBDel"]
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label>Id Book:</label>
+        <input asp-for="Book.Id" class="form-control">
+    </div>
+    <button asp-page-handler="DeleteBook" class="btn btn-primary">Delete Book</button>
+</form>

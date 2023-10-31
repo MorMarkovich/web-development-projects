@@ -1,0 +1,45 @@
+@page
+@model MyWebLibrary.Pages.LoanReturnModel
+@{
+}
+<h2>Loan/Return of Books</h2>
+@if (TempData["ErrorMessageSub"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageSub"]
+    </div>
+}
+@if (TempData["ErrorMessageBook"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageBook"]
+    </div>
+}@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessageBookTake"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageBookTake"]
+    </div>
+}@if (TempData["ErrorMessageBookRemove"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessageBookRemove"]
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label>Subscriber ID:</label>
+        <input name="SubscriberId" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Book ID:</label>
+        <input name="BookId" class="form-control" required>
+    </div>
+    <button asp-page-handler="LoanBook" class="btn btn-primary">Loan Book</button>
+    <button asp-page-handler="ReturnBook" class="btn btn-secondary">Return Book</button>
+</form>

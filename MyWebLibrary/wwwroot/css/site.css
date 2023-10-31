@@ -1,0 +1,32 @@
+
+/* Button styles */
+button, .btn, [asp-page-handler] {
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover, [asp-page-handler]:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+/* Input styles */
+input, .form-control {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+input:focus, .form-control:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

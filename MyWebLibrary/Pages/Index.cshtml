@@ -1,0 +1,15 @@
+@page
+@model MyWebLibrary.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h2>Welcome to the Library</h2>
+<ul>
+    <li><a asp-page="ManageLibrary">Manage Library</a></li>
+    <li><a asp-page="LoanReturn">Loan/Return of Books</a></li>
+    <li><a asp-page="DisplayInformation">Display Information</a></li>
+</ul>
+<button id="welcomeButton">Show Welcome Message</button>
+<div id="welcomeMessage" style="display:none;">
+    <p>Welcome to the Library! We hope you find what you're looking for.</p>
+</div>
